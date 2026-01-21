@@ -128,12 +128,12 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="flex flex-col h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Header */}
       <div className="bg-black/30 backdrop-blur-sm border-b border-purple-500/30 p-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-linear-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
               <Brain className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -222,7 +222,7 @@ const App = () => {
                   <div
                     className={`max-w-2xl rounded-2xl p-4 ${
                       message.role === 'user'
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+                        ? 'bg-linear-to-r from-purple-500 to-pink-500 text-white'
                         : 'bg-white/10 backdrop-blur-sm text-white border border-purple-500/30'
                     }`}
                   >
@@ -280,7 +280,7 @@ const App = () => {
                 <button
                   onClick={handleSend}
                   disabled={loading || !input.trim()}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-linear-to-r from-purple-500 to-pink-500 text-white p-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-5 h-5" />
                 </button>
@@ -292,7 +292,7 @@ const App = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-6 h-full flex flex-col">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-white">Knowledge Base</h2>
-                <label className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity cursor-pointer flex items-center gap-2 disabled:opacity-50">
+                <label className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity cursor-pointer flex items-center gap-2 disabled:opacity-50">
                   <Upload className="w-4 h-4" />
                   Upload Document
                   <input
@@ -325,7 +325,7 @@ const App = () => {
                   <button
                     onClick={handleAddKnowledge}
                     disabled={loading || !knowledgeInput.trim()}
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="bg-linear-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                   >
                     {loading ? (
                       <>
