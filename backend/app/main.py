@@ -1,4 +1,5 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
+from app.vector_store import vector_store
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from datetime import datetime
@@ -267,9 +268,12 @@ async def global_exception_handler(request, exc):
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={"detail": "An unexpected error occurred"}
     )
+@app.get("/vector-stats", tags=["Debug"])
+def vector_stats():
+    return vector_store.get_stats()
 
 if __name__ == "__main__":
-    import uvicorn
+    import uvicorn # type: ignore
     print(f"\n{'='*60}")
     print(f"Starting {settings.PROJECT_NAME}")
     print(f"Version: {settings.VERSION}")
@@ -279,4 +283,5 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000,
         reload=True
+        
     )
